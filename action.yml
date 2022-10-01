@@ -1,0 +1,15 @@
+name: 'PHP NoVerify Linter'
+description: 'php syntax control (php -l)'
+branding:
+  icon: 'check-circle'
+  color: 'green'
+inputs:
+  dir:
+    description: 'Folder to check syntax'
+    required: false
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.dir }}
