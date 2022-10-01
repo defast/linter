@@ -7,7 +7,6 @@ RUN apk update && apk --update add \
 
 RUN go install github.com/VKCOM/noverify@latest
 
-RUN mkdir /phplint && cd /phplint
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
