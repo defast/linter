@@ -5,8 +5,7 @@ ENV ENTRYPOINT_CMD="noverify -stubs-dir=/root/phpstorm-stubs -cache-dir=/tmp/cac
 RUN apk update && apk --update add \
     git
 
-RUN git clone https://github.com/JetBrains/phpstorm-stubs /root/phpstorm-stubs && \
-    go get -u github.com/VKCOM/noverify
+RUN go get -u github.com/VKCOM/noverify
 
 RUN mkdir /phplint && cd /phplint
 
