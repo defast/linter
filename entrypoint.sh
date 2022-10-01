@@ -16,6 +16,6 @@ if [ ! -d "${DIR_TO_SCAN}" ] && [ ! -f "${DIR_TO_SCAN}" ]; then
   exit 2
 fi
 
-noverify ${DIR_TO_SCAN}
+noverify check ${DIR_TO_SCAN}
 
 exit "${?}"
