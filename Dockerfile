@@ -8,6 +8,8 @@ RUN apk update && apk --update add \
 RUN git clone https://github.com/JetBrains/phpstorm-stubs /root/phpstorm-stubs && \
     go get -u github.com/VKCOM/noverify
 
+RUN mkdir /phplint && cd /phplint
+
 COPY "entrypoint.sh" "/entrypoint.sh"
 
 RUN chmod +x /entrypoint.sh
