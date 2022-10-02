@@ -7,7 +7,6 @@ else
   DIR_TO_SCAN="$1"
 fi
 
-echo "## Running PHP Syntax Checker (lint) on ${DIR_TO_SCAN}"
 
 if [ ! -d "${DIR_TO_SCAN}" ] && [ ! -f "${DIR_TO_SCAN}" ]; then
   echo "\nInvalid directory or file: ${DIR_TO_SCAN}"
@@ -18,6 +17,7 @@ fi
 
 for var in $(ls $DIR_TO_SCAN)
 do
+  echo "## Running PHP Syntax Checker (lint) on ${var}"
 noverify check --exclude-checks='unused' ${var}
 done
 
