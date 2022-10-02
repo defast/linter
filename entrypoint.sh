@@ -15,11 +15,10 @@ if [ ! -d "${DIR_TO_SCAN}" ] && [ ! -f "${DIR_TO_SCAN}" ]; then
   exit 2
 fi
 
-for var in $(ls $DIR_TO_SCAN)
-do
-  echo "## Running PHP Syntax Checker (lint) on ${var}"
-noverify check --exclude-checks='unused' ${var}
-done
+
+echo "## Running PHP Syntax Checker (lint) on ${var}"
+noverify check --exclude-checks='unused' --exclude='./bitrix' ${var}
+
 
 
 exit "${?}"
