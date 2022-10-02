@@ -16,6 +16,10 @@ if [ ! -d "${DIR_TO_SCAN}" ] && [ ! -f "${DIR_TO_SCAN}" ]; then
   exit 2
 fi
 
-noverify check --exclude-checks='unused' ${DIR_TO_SCAN}
+for var in $(ls $DIR_TO_SCAN)
+do
+noverify check --exclude-checks='unused' ${var}
+done
+
 
 exit "${?}"
