@@ -13,7 +13,7 @@ set -e
 #fi
 #done
 
-phpcs -n --standard=PSR1,PSR12 $(ls)
+phpcs -n --standard=PSR1,PSR12 --ignore=bitrix $(ls)
 
 #echo "## Running PHP Syntax Checker (lint) on ${var}"
 #phpcs --standard=PSR1,PSR12
