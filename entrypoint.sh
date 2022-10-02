@@ -1,19 +1,13 @@
 #!/bin/sh
 set -e
 
-#for file in $(ls)
-#do
-#  echo "## Running PHP Syntax Checker (lint) on ${file}"
-#if [ -d "$file" ] && [ "$file" != "bitrix" ]
-#then
-#phpcs -n --standard=PSR1,PSR12 "${file}/"
-#elif [ -f "$file" ] && [[ $file == *.php ]]
-#then
-#phpcs -n --standard=PSR1,PSR12 "./${file}"
-#fi
-#done
+if [ -z "$1" ]; then
+  IGNORE_DIR=false
+else
+  IGNORE_DIR="$1"
+fi
 
-phpcs -n --standard=PSR1,PSR12 --ignore=bitrix --report=full $(ls)
+phpcs -n --standard=PSR1,PSR12 --ignore="${IGNORE_DIR}" --report=full $(ls)
 
 #echo "## Running PHP Syntax Checker (lint) on ${var}"
 #phpcs --standard=PSR1,PSR12

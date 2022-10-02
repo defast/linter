@@ -5,9 +5,9 @@ branding:
   color: 'green'
 inputs:
   ignore:
-    description: 'Ignore Folder to check syntax'
+    description: 'Ignore folder to check syntax'
     required: false
-    default: false
+    default: '.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
