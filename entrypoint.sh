@@ -17,20 +17,8 @@ fi
 
 
 echo "## Running PHP Syntax Checker (lint) on ${var}"
+noverify check --exclude-checks='unused, undefinedVariable' --critical='syntax' --exclude='bitrix/' --php7 ./
 
-# Preparing the beginning and end of the commits that will be analyzed
-commit_end="git rev-parse --abbrev-ref HEAD"
-commit_begin="git rev-parse -q --verify origin/${commit_end}"
 
-if [ -z "$commit_begin" ]; then
-    commit_begin=ORIGIN_MASTER
-fi
-
-# Call noverify
-noverify check\
-    --git=.git\
-    --git-commit-from=$commit_begin\
-    --git-commit-to=$commit_end\
-    --git-work-tree=.\
 
 exit "${?}"
