@@ -1,11 +1,6 @@
-FROM golang:1.19-alpine
+FROM php:7.4-cli
 
-RUN apk update && apk --update add \
-    git
-
-RUN go install github.com/VKCOM/noverify@latest
-
-RUN mkdir /phplint && cd /phplint
+RUN pear install PHP_CodeSniffer
 
 COPY "entrypoint.sh" "/entrypoint.sh"
 
