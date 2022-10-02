@@ -17,7 +17,7 @@ fi
 
 
 echo "## Running PHP Syntax Checker (lint) on ${var}"
-noverify check --exclude-checks='unused' --exclude='./bitrix' ${DIR_TO_SCAN}
+noverify check --exclude-checks='unused' --allow-checks='arraySyntax' --exclude='./bitrix' ${DIR_TO_SCAN}
 
 
 
