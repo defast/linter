@@ -1,9 +1,0 @@
-path: ./
-jobs: 10
-cache: build/phplint.cache
-extensions:
-  - php
-exclude:
-  - bitrix
-warning: true
-memory_limit: -1
