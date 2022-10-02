@@ -4,12 +4,12 @@ branding:
   icon: 'check-circle'
   color: 'green'
 inputs:
-  dir:
-    description: 'Folder to check syntax'
+  ignore:
+    description: 'Ignore folder to check syntax'
     required: false
     default: '.'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.dir }}
+    - ${{ inputs.ignore }}
