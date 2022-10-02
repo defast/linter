@@ -11,6 +11,7 @@ RUN mv composer.phar /usr/local/bin/composer
 
 RUN mkdir /phplint && cd /phplint && composer require overtrue/phplint && ln -s /phplint/vendor/bin/phplint /usr/local/bin/phplint
 
+COPY ".phplint.yml" "/phplint/vendor/bin/phplint/.phplint.yml"
 COPY "entrypoint.sh" "/entrypoint.sh"
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
