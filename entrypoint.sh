@@ -2,6 +2,6 @@
 set -e
 
 echo "## Running PHP Syntax Checker (lint) on ${var}"
-phpcs ./
+phpcs ./index.php
 
 exit "${?}"
