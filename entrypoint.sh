@@ -17,7 +17,7 @@ fi
 
 
 echo "## Running PHP Syntax Checker (lint) on ${var}"
-noverify check --exclude-checks='unused, undefinedVariable' --critical='syntax' --exclude='bitrix/' ./
+noverify check --exclude-checks='unused, undefinedVariable' --critical='syntax' --exclude='bitrix/' --php7 --allow-disable='bitrix/modules/*/install/' ./
 
 
 
