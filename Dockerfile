@@ -1,4 +1,4 @@
-FROM php:7.4-cli
+FROM php:5.6-cli
 
 RUN pear install PHP_CodeSniffer
 
