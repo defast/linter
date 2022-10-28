@@ -1,4 +1,5 @@
-PHP Syntax checker (lint) action
+# PHP Syntax checker (lint) action
+
 
 main - синтаксис php
 
